@@ -4,11 +4,33 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BastideAyebApp"
-    Title="BastideAyebApp">
+    Title="The Card Vault">
+    
+    <Shell.Resources>
+        <Style TargetType="TabBar">
+            <Setter Property="Shell.TabBarUnselectedColor" Value="#A9A9A9" />
+            <Setter Property="Shell.TabBarTitleColor" Value="#2E8B57" />
+        </Style>
+    </Shell.Resources>
+    
+    
+    
+    <TabBar>
+        <Tab Title="Accueil" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        <Tab Title="Tirage" Icon="cards.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="DrawPage" />
+        </Tab>
+
+        <Tab Title="Ajouter" Icon="add.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="AddRulePage" />
+        </Tab>
+
+        <Tab Title="Bonus" Icon="bonus.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="BonusPage" />
+        </Tab>
+    </TabBar>
 
 </Shell>
