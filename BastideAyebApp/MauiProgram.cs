@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using BastideAyebApp.Services;
 using BastideAyebApp.ViewModels;
+using BastideAyebApp.Views;
 
 namespace BastideAyebApp;
 
@@ -22,6 +23,10 @@ public static class MauiProgram
         builder.Services.AddTransient<DrawViewModel>();
         
         builder.Services.AddTransient<DrawPage>();
+
+        builder.Services.AddTransient<CardDetailViewModel>();
+        
+        builder.Services.AddTransient<CardDetailPage>();
         
 
 #if DEBUG

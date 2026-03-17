@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using BastideAyebApp.Models;
 using BastideAyebApp.Services;
+using BastideAyebApp.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -33,4 +34,21 @@ public partial class DrawViewModel : ObservableObject{
             Cards.Add(card);
         }
     }
+
+    [RelayCommand]
+    public async Task GoToDetailsAsync(CardModels selectedCard)
+    {
+        if (selectedCard == null)
+            return;
+
+        var navigationParameter = new Dictionary<string, object>()
+        {
+            { "Card", selectedCard }
+        };
+
+        await Shell.Current.GoToAsync(nameof(CardDetailPage), navigationParameter);
+
+    }
+    
+    
 }
