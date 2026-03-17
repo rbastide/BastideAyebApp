@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:BastideAyebApp.Models"
+             xmlns:viewmodels="clr-namespace:BastideAyebApp.ViewModels"
+             x:Class="BastideAyebApp.DrawPage"
+             Title="Tirage de cartes">
+
+    <Grid RowDefinitions="Auto,*" Padding="10">
+        
+        <Button Grid.Row="0" 
+                Text="Tirer 10 nouvelles cartes" 
+                Command="{Binding LoadCardsCommand}" 
+                BackgroundColor="#2E8B57"
+                TextColor="White"
+                CornerRadius="8"
+                Margin="0,0,0,15"/>
+
+        <CollectionView Grid.Row="1" 
+                        ItemsSource="{Binding Cards}" 
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:CardModels">
+                    <Frame Margin="0,0,0,10" Padding="10" CornerRadius="10" BackgroundColor="#2B2B2B">
+                        <HorizontalStackLayout Spacing="15">
+                            <Image Source="{Binding Image}" WidthRequest="60" HeightRequest="85" Aspect="AspectFit" />
+                            
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="{Binding Value}" FontAttributes="Bold" FontSize="18" TextColor="White" />
+                                <Label Text="{Binding Suit}" TextColor="#A9A9A9" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BastideAyebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+75d35811ca1eb9933ce9ba9a4013be518e292411")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ab9e35ed91171d86ac5bd671fbe0cac50077a36d")]
 [assembly: System.Reflection.AssemblyProductAttribute("BastideAyebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BastideAyebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

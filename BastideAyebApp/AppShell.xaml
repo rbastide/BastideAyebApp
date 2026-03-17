@@ -21,7 +21,7 @@
         </Tab>
 
         <Tab Title="Tirage" Icon="cards.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="DrawPage" />
+            <ShellContent ContentTemplate="{DataTemplate local:DrawPage}" Route="DrawPage" />
         </Tab>
 
         <Tab Title="Ajouter" Icon="add.png">
