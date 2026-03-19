@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BastideAyebApp.Views.GifPage"
+             Title="Animation magique"
+             BackgroundColor="#1E1E1E">
+
+    <VerticalStackLayout 
+        Padding="30" 
+        Spacing="25"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label 
+            Text=" Mélange des cartes " 
+            FontSize="24" 
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalTextAlignment="Center" />
+
+        <Image 
+            Source="card_shuffle.gif"
+            IsAnimationPlaying="True"
+            HeightRequest="300"
+            WidthRequest="300"
+            Aspect="AspectFit" />
+
+        <Label 
+            Text="Les cartes sont mélangées..."
+            FontSize="14"
+            TextColor="#A9A9A9"
+            HorizontalTextAlignment="Center" />
+
+        <Button 
+            Text="⬅ Retour à l'accueil"
+            Clicked="OnBackClicked"
+            BackgroundColor="#2E8B57"
+            TextColor="White"
+            FontSize="16"
+            FontAttributes="Bold"
+            CornerRadius="10"
+            HeightRequest="50" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
