@@ -2,6 +2,7 @@
 <Shell
     x:Class="BastideAyebApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:views="clr-namespace:BastideAyebApp.Views"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BastideAyebApp"
     Title="The Card Vault">
@@ -28,8 +29,8 @@
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="AddRulePage" />
         </Tab>
 
-        <Tab Title="Bonus" Icon="bonus.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="BonusPage" />
+        <Tab Title="Jeux" Icon="bonus.png">
+            <ShellContent ContentTemplate="{DataTemplate views:GamesPage}" Route="GamesPage" />
         </Tab>
     </TabBar>
 

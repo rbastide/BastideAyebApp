@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BastideAyebApp.Views.NumberGuessPage"
+             Title="Nombre Mystère"
+             BackgroundColor="#1E1E1E">
+
+    <VerticalStackLayout VerticalOptions="Center" Spacing="20" Padding="30">
+
+        <Label Text="🔢 Nombre Mystère"
+               FontSize="30" FontAttributes="Bold"
+               TextColor="#2E8B57" HorizontalTextAlignment="Center"/>
+
+        <Label Text="Devinez un nombre entre 1 et 100"
+               FontSize="16" TextColor="#A9A9A9"
+               HorizontalTextAlignment="Center"/>
+
+        <Label x:Name="AttemptsLabel"
+               Text="Tentatives : 0"
+               FontSize="16" TextColor="LightGray"
+               HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="GuessEntry"
+               Placeholder="Entrez un nombre..."
+               Keyboard="Numeric"
+               FontSize="22"
+               HorizontalTextAlignment="Center"
+               TextColor="White"
+               PlaceholderColor="#A9A9A9"
+               BackgroundColor="#2B2B2B"/>
+
+        <Button Text="Deviner"
+                Clicked="OnGuessClicked"
+                BackgroundColor="#2E8B57" TextColor="White"
+                FontAttributes="Bold" FontSize="18"
+                CornerRadius="10" HeightRequest="50"
+                HorizontalOptions="Fill"/>
+
+        <Label x:Name="HintLabel"
+               Text=""
+               FontSize="22" FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="White"/>
+
+        <Button x:Name="NewGameButton"
+                Text="Nouvelle Partie"
+                Clicked="OnNewGameClicked"
+                BackgroundColor="#A9A9A9" TextColor="White"
+                FontAttributes="Bold" CornerRadius="10"
+                HeightRequest="50" HorizontalOptions="Fill"/>
+
+    </VerticalStackLayout>
+</ContentPage>

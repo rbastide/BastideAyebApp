@@ -28,7 +28,12 @@ public static class MauiProgram
         
         builder.Services.AddTransient<CardDetailPage>();
         
-
+        builder.Services.AddTransient<GamesPage>();
+        
+        builder.Services.AddTransient<CoinFlipPage>();
+        
+        builder.Services.AddTransient<NumberGuessPage>();
+        
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
