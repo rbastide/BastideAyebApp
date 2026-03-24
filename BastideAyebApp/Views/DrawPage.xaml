@@ -4,16 +4,17 @@
              xmlns:models="clr-namespace:BastideAyebApp.Models"
              xmlns:viewmodels="clr-namespace:BastideAyebApp.ViewModels"
              x:Class="BastideAyebApp.DrawPage"
-             Title="Tirage de cartes">
-
-    <Grid RowDefinitions="Auto,*" Padding="10">
+             Title="Tirage de cartes"
+             BackgroundColor="{StaticResource AppBackground}"> <Grid RowDefinitions="Auto,*" Padding="10">
         
         <Button Grid.Row="0" 
                 Text="Tirer 10 nouvelles cartes" 
                 Command="{Binding LoadCardsCommand}" 
-                BackgroundColor="#2E8B57"
-                TextColor="White"
-                CornerRadius="8"
+                BackgroundColor="{StaticResource AccentColor}"
+                TextColor="#1A2F24"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
                 Margin="0,0,0,15"/>
 
         <CollectionView Grid.Row="1" 
@@ -21,7 +22,8 @@
                         SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CardModels">
-                    <Frame Margin="0,0,0,10" Padding="10" CornerRadius="10" BackgroundColor="#2B2B2B">
+                    
+                    <Frame Style="{StaticResource CardStyle}" Margin="0,0,0,10">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:DrawViewModel}}, Path=GoToDetailsCommand}"
@@ -31,11 +33,12 @@
                         <HorizontalStackLayout Spacing="15">
                             <Image Source="{Binding Image}" WidthRequest="60" HeightRequest="85" Aspect="AspectFit" />
                             <VerticalStackLayout VerticalOptions="Center">
-                                <Label Text="{Binding Value}" FontAttributes="Bold" FontSize="18" TextColor="White" />
-                                <Label Text="{Binding Suit}" TextColor="#A9A9A9" />
+                                <Label Text="{Binding Value}" FontAttributes="Bold" FontSize="18" TextColor="{StaticResource PrimaryText}" />
+                                <Label Text="{Binding Suit}" TextColor="{StaticResource SecondaryText}" />
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
                     </Frame>
+                    
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -26,6 +26,7 @@
     <Color x:Key="Gray600">#404040</Color>
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
+    <Color x:Key="ShellBackground">#0A150F</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
@@ -41,4 +42,14 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+    
+    <Color x:Key="AppBackground">#1A2F24</Color>      
+    <Color x:Key="CardBackground">#2A4235</Color>     
+    <Color x:Key="AccentColor">#D4AF37</Color>        
+    <Color x:Key="PrimaryText">#FFFFFF</Color>        
+    <Color x:Key="SecondaryText">#C1D1C8</Color>      
+    <SolidColorBrush x:Key="AppBackgroundBrush" Color="{StaticResource AppBackground}"/>
+    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{StaticResource CardBackground}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+    
 </ResourceDictionary>

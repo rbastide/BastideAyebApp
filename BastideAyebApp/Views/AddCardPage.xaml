@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:BastideAyebApp.ViewModels"
              x:Class="BastideAyebApp.Views.AddCardPage"
-             Title="Ajouter une Carte">
+             Title="Ajouter une Carte"
+             BackgroundColor="{StaticResource AppBackground}">
 
     <ContentPage.BindingContext>
         <viewmodels:AddCardViewModel />
@@ -11,22 +12,53 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
-            <Label Text="Créer une nouvelle carte" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label Text="Créer une nouvelle carte" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource PrimaryText}" />
 
-            <Entry Placeholder="Titre de la carte" Text="{Binding Titre}" />
-            <Entry Placeholder="Description (Ex: Carreau)" Text="{Binding Description}" />
-            <Label Text="Image de la carte :" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Entry Placeholder="Titre de la carte" 
+                   Text="{Binding Titre}" 
+                   TextColor="{StaticResource PrimaryText}" 
+                   PlaceholderColor="{StaticResource SecondaryText}" />
+                   
+            <Entry Placeholder="Description (Ex: Carreau)" 
+                   Text="{Binding Description}" 
+                   TextColor="{StaticResource PrimaryText}" 
+                   PlaceholderColor="{StaticResource SecondaryText}" />
+                   
+            <Label Text="Image de la carte :" 
+                   FontAttributes="Bold" 
+                   Margin="0,10,0,0" 
+                   TextColor="{StaticResource PrimaryText}" />
             
-            <Image Source="{Binding Image}" 
-                   HeightRequest="200" 
-                   BackgroundColor="#F0F0F0" 
-                   Aspect="AspectFit" />
+            <Frame Style="{StaticResource CardStyle}" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
+                <Image Source="{Binding Image}" 
+                       HeightRequest="200" 
+                       Aspect="AspectFill" /> </Frame>
 
             <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
-                <Button Text="📷 Caméra" Command="{Binding TakePhotoCommand}" />
-                <Button Text="🖼️ Galerie" Command="{Binding PickPhotoCommand}" />
+                <Button Text="📷 Caméra" 
+                        Command="{Binding TakePhotoCommand}"
+                        BackgroundColor="{StaticResource CardBackground}"
+                        TextColor="{StaticResource PrimaryText}"
+                        CornerRadius="8" />
+                <Button Text="🖼️ Galerie" 
+                        Command="{Binding PickPhotoCommand}"
+                        BackgroundColor="{StaticResource CardBackground}"
+                        TextColor="{StaticResource PrimaryText}"
+                        CornerRadius="8" />
             </HorizontalStackLayout>
-            <Button Text="Ajouter à la liste" Command="{Binding AddCardCommand}" Margin="0,20,0,0" />
+            
+            <Button Text="Ajouter à la liste" 
+                    Command="{Binding AddCardCommand}" 
+                    Margin="0,20,0,0" 
+                    BackgroundColor="{StaticResource AccentColor}" 
+                    TextColor="#1A2F24" 
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

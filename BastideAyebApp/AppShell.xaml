@@ -5,16 +5,16 @@
     xmlns:views="clr-namespace:BastideAyebApp.Views"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BastideAyebApp"
-    Title="The Card Vault">
+    Title="The Card Vault"
     
-    <Shell.Resources>
-        <Style TargetType="TabBar">
-            <Setter Property="Shell.TabBarUnselectedColor" Value="#A9A9A9" />
-            <Setter Property="Shell.TabBarTitleColor" Value="#2E8B57" />
-        </Style>
-    </Shell.Resources>
+    Shell.BackgroundColor="{StaticResource ShellBackground}"
+    Shell.TitleColor="{StaticResource AccentColor}"
     
+    Shell.ForegroundColor="{StaticResource AccentColor}"
     
+    Shell.TabBarBackgroundColor="{StaticResource ShellBackground}"
+    Shell.TabBarTitleColor="{StaticResource AccentColor}" 
+    Shell.TabBarUnselectedColor="{StaticResource SecondaryText}"> 
     
     <TabBar>
         <Tab Title="Accueil" Icon="home.png">

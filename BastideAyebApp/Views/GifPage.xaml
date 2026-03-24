@@ -3,19 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BastideAyebApp.Views.GifPage"
              Title="Animation magique"
-             BackgroundColor="#1E1E1E">
-
-    <VerticalStackLayout 
-        Padding="30" 
-        Spacing="25"
-        VerticalOptions="Center"
-        HorizontalOptions="Center">
+             BackgroundColor="{StaticResource AppBackground}"> <VerticalStackLayout 
+                                                                   Padding="30" 
+                                                                   Spacing="25"
+                                                                   VerticalOptions="Center"
+                                                                   HorizontalOptions="Center">
 
         <Label 
             Text=" Mélange des cartes " 
             FontSize="24" 
             FontAttributes="Bold"
-            TextColor="White"
+            TextColor="{StaticResource PrimaryText}" 
             HorizontalTextAlignment="Center" />
 
         <Image 
@@ -28,14 +26,14 @@
         <Label 
             Text="Les cartes sont mélangées..."
             FontSize="14"
-            TextColor="#A9A9A9"
+            TextColor="{StaticResource SecondaryText}" 
             HorizontalTextAlignment="Center" />
 
         <Button 
             Text="⬅ Retour à l'accueil"
             Clicked="OnBackClicked"
-            BackgroundColor="#2E8B57"
-            TextColor="White"
+            BackgroundColor="{StaticResource AccentColor}" 
+            TextColor="#1A2F24" 
             FontSize="16"
             FontAttributes="Bold"
             CornerRadius="10"
