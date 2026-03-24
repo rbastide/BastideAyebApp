@@ -26,7 +26,7 @@
         </Tab>
 
         <Tab Title="Ajouter" Icon="add.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="AddRulePage" />
+            <ShellContent ContentTemplate="{DataTemplate views:AddCardPage}" Route="AddRulePage" />
         </Tab>
 
         <Tab Title="Jeux" Icon="bonus.png">
