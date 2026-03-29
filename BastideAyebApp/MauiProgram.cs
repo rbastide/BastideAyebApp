@@ -2,6 +2,8 @@
 using BastideAyebApp.Services;
 using BastideAyebApp.ViewModels;
 using BastideAyebApp.Views;
+using Microsoft.EntityFrameworkCore;
+using BastideAyebApp.Data;
 
 namespace BastideAyebApp;
 
@@ -18,7 +20,12 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
         
+        var dbPath = Path.Combine(FileSystem.AppDataDirectory, "cards.db");
+        builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlite($"Data Source={dbPath}"));
+        
         builder.Services.AddSingleton<CardService>();
+        builder.Services.AddSingleton<DatabaseService>();
         
         builder.Services.AddTransient<DrawViewModel>();
         
@@ -33,6 +40,10 @@ public static class MauiProgram
         builder.Services.AddTransient<CoinFlipPage>();
         
         builder.Services.AddTransient<NumberGuessPage>();
+        
+        builder.Services.AddTransient<AddCardViewModel>();
+        
+        builder.Services.AddTransient<AddCardPage>();
         
 #if DEBUG
         builder.Logging.AddDebug();

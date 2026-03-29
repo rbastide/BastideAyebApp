@@ -1,9 +1,15 @@
 ﻿using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BastideAyebApp.Models;
 
 public class CardModels
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
+    
     [JsonPropertyName("code")]
     public string Code { get; set; }
 
@@ -15,6 +21,8 @@ public class CardModels
 
     [JsonPropertyName("suit")]
     public string Suit { get; set; }
+    
+    public DateTime SavedAt { get; set; } = DateTime.Now;
     
 }
 

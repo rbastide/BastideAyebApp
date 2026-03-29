@@ -5,12 +5,8 @@
              x:Class="BastideAyebApp.Views.AddCardPage"
              Title="Ajouter une Carte"
              BackgroundColor="{StaticResource AppBackground}">
-
-    <ContentPage.BindingContext>
-        <viewmodels:AddCardViewModel />
-    </ContentPage.BindingContext>
-
-    <ScrollView>
+       
+       <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
             <Label Text="Créer une nouvelle carte" 
                    FontSize="24" 

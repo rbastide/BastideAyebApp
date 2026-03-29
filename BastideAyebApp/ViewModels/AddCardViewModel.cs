@@ -3,12 +3,15 @@ using BastideAyebApp.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using BastideAyebApp.Services;
 using Microsoft.Maui.Media; // Nécessaire pour MediaPicker
 
 namespace BastideAyebApp.ViewModels;
 
 public partial class AddCardViewModel : ObservableObject
 {
+    private readonly DatabaseService _databaseService;
+    
     [ObservableProperty]
     private string titre;
 
@@ -17,6 +20,11 @@ public partial class AddCardViewModel : ObservableObject
 
     [ObservableProperty]
     private string image;
+    
+    public AddCardViewModel(DatabaseService databaseService)
+    {
+        _databaseService = databaseService;
+    }
 
     [RelayCommand]
     private async Task TakePhotoAsync()
@@ -62,6 +70,9 @@ public partial class AddCardViewModel : ObservableObject
             Suit = Description,   
             Image = string.IsNullOrWhiteSpace(Image) ? "add.png" : Image 
         };
+        
+        // Sauvegarde en base de données
+        await _databaseService.SaveCardAsync(newCard);
 
         WeakReferenceMessenger.Default.Send(new AddCardMessage(newCard));
 
